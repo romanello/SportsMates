@@ -1,13 +1,12 @@
 ﻿
-angular.module('myApp', ['ngRoute','ngMaterial'])
-    .config(function ($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
-            .accentPalette('deep-orange');
-    });
+var module = angular.module('myApp', ['ngRoute', 'ngMaterial'])
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('deep-orange');
+  });
 
-angular.module('myApp').
-  config(['$routeProvider', function ($routeProvider) {
+module.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
      .when('/', {
        templateUrl: 'app/partials/home.html',
@@ -17,7 +16,7 @@ angular.module('myApp').
         templateUrl: 'app/partials/home.html',
         controller: 'HomeController'
     })
-    .when('/signup', {
+    .when('/profile', {
         templateUrl: 'app/partials/profile.html',
         controller: 'ProfileController'
     })
@@ -25,8 +24,7 @@ angular.module('myApp').
 
   }]);
 
-angular.module('myApp')
-  .factory('myService', function ($http) {
+module.factory('myService', function ($http) {
 
     var serv = {
      
@@ -38,4 +36,24 @@ angular.module('myApp')
 
     return serv;
 
-  });
+});
+
+module.factory('facebookService', function ($q) {
+  return {
+    getMyLastName: function() {
+      var deferred = $q.defer();
+      FB.api('/me', {
+        fields: 'last_name'
+      }, function(response) {
+        if (!response || response.error) {
+          deferred.reject('Error occured');
+        } else {
+          deferred.resolve(response);
+        }
+      });
+      return deferred.promise;
+    }
+  };
+});
+
+

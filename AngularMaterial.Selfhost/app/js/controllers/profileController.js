@@ -1,7 +1,8 @@
 ﻿'use strict';
 angular.module('myApp')
-  .controller('ProfileController', function ($scope, $http, $location, $mdDialog, $mdTabs) {
+  .controller('ProfileController', function ($scope, $http, $location, $mdDialog) {
 
+    $scope.m = {};
     $scope.header = "Signup";
 
     $scope.showAlert = function(ev) {
@@ -20,7 +21,7 @@ angular.module('myApp')
       );
     };
 
-    $scope.nextTab = function(e) {
-      $mdTabs('profileTabs').next();
+    $scope.nextTab = function (nextIndex) {
+      $scope.m.tabIndex = nextIndex;
     };
   });

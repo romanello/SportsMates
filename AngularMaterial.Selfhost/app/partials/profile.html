@@ -1,4 +1,4 @@
-﻿<md-tabs md-dynamic-height md-border-bottom md-component-id="profileTabs">
+﻿<md-tabs md-dynamic-height md-border-bottom md-component-id="profileTabs" md-selected="m.tabIndex">
   <md-tab label="General">
     <md-content class="md-padding" id="personalDataTab">
       <h1 class="md-title">General personal settings</h1>
@@ -37,7 +37,7 @@
             <md-datepicker ng-model="user.bithdate" md-placeholder="Enter date"></md-datepicker>
           </div>
           <div layout layout-sm="column">
-            <md-button class="md-raised md-primary" ng-click="nextTab($event)">Next step</md-button>
+            <md-button class="md-raised md-primary" ng-click="nextTab(1)">Next step</md-button>
           </div>
         </form>
       </p>
