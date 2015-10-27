@@ -1,0 +1,47 @@
+﻿<md-dialog aria-label="New sport" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>New favourite sport</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="app/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; min-width: 300px; min-height: 300px;" class="md-padding">
+      <div layout layout-sm="column" flex>
+        <md-autocomplete required
+                         md-selected-item="m.selectedItem"
+                         md-search-text="m.searchText"
+                         md-items="item in querySearch(m.searchText)"
+                         md-item-text="item.name"
+                         md-min-length="0"
+                         md-floating-label="What is your favorite sport?">
+          <md-item-template>
+            <span md-highlight-text="m.searchText" md-highlight-flags="^i">{{item.name}}</span>
+          </md-item-template>
+          <md-not-found>
+            No sports matching "{{m.searchText}}" were found.
+            <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+          </md-not-found>
+        </md-autocomplete>
+      </div>
+      <div layout layout-sm="column" flex>
+        <md-input-container>
+          <label>Position (if applicable)</label>
+          <input ng-model="user.name">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()">
+        Cancel
+      </md-button>
+      <md-button ng-click="save()">
+        Save
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

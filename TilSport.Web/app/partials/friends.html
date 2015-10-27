@@ -1,0 +1,25 @@
+﻿<md-content class="md-padding">
+  <h1 class="md-title">Friends and messages</h1>
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="item in m.friends">
+      <img ng-src="{{item.faceUrl}}" class="md-avatar" />
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ item.name }}</h3>
+        <h4>{{ item.lastMessage }}</h4>
+      </div>
+      <div layout="column">
+        <md-button>
+          <i class="material-icons icon-in-button">pageview</i>
+          View details
+        </md-button>
+      </div>
+      <div layout="column">
+        <md-button>
+          <i class="material-icons icon-in-button">message</i>
+          Send messsage
+        </md-button>
+      </div>
+    </md-list-item>
+  </md-list>
+
+</md-content>

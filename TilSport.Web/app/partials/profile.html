@@ -1,0 +1,123 @@
+﻿<md-tabs md-dynamic-height md-border-bottom md-component-id="profileTabs" md-selected="m.tabIndex">
+  <md-tab label="General">
+    <md-content class="md-padding" id="personalDataTab">
+      <h1 class="md-title">General information</h1>
+      <p>
+        <form name="userForm">
+          <div layout layout-sm="column" flex>
+            <md-input-container>
+              <label>Full Name</label>
+              <input ng-model="user.name">
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column" flex>
+            <md-input-container>
+              <label>Email Address</label>
+              <input ng-model="user.email">
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-input-container>
+              <label>Day of birth</label>
+              <md-select ng-model="user.birth.day">
+                <md-option ng-repeat="day in m.days" value="{{day}}">
+                  {{day}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <md-input-container>
+              <label>Month of birth</label>
+              <md-select ng-model="user.birth.month">
+                <md-option ng-repeat="month in m.months" value="{{month}}">
+                  {{month}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <md-input-container>
+              <label>Year of birth</label>
+              <md-select ng-model="user.birth.year">
+                <md-option ng-repeat="year in m.years" value="{{year}}">
+                  {{year}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-input-container>
+              <label>Location / Home Address</label>
+              <input ng-model="user.location">
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-switch ng-model="user.geolocate" aria-label="Switch 1">Geolocate me automaticallty</md-switch>
+          </div>
+        </form>
+      </p>
+      <div layout layout-sm="column">
+        <md-button class="md-raised md-primary" ng-click="nextTab(1)">To next step</md-button>
+      </div>
+
+    </md-content>
+  </md-tab>
+  <md-tab label="Sports">
+    <md-content class="md-padding">
+      <h1 class="md-title">My favourite activities</h1>
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="item in m.sports">
+          <img ng-src="{{item.imageUrl}}" style="width: 60px; height:60px;" />
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ item.sport }}</h3>
+            <h4>{{ item.skill }}</h4>
+          </div>
+          <div layout="column">
+            <md-button>
+              <i class="material-icons icon-in-button">edit</i>
+              Edit
+            </md-button>
+          </div>
+          <div layout="column">
+            <md-button>
+              <i class="material-icons icon-in-button">delete</i>
+              Delete
+            </md-button>
+          </div>
+        </md-list-item>
+      </md-list>
+
+      <div layout="column" layout-align="center end">
+        <md-button class="md-fab md-mini md-accent">
+          <i class="material-icons" ng-click="showSportDialog($event)" style="position:relative; bottom: 2px;">add</i>
+        </md-button>
+      </div>
+     
+      <div layout layout-sm="column">
+        <md-button class="md-raised md-primary" ng-click="nextTab(2)">To next step</md-button>
+      </div>
+     
+    </md-content>
+  </md-tab>
+  <md-tab label="Schedule">
+    <md-content class="md-padding">
+      <h1 class="md-title">My time for activities</h1>
+      <md-list style="width: 350px;">
+        <md-list-item class="md-2-line" ng-repeat="item in m.schedule" >
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ item.dayOfWeek }}</h3>
+          </div>
+          <div layout="column" style="position:relative; bottom: 10px;">
+            <md-select ng-model="item.available">
+              <md-option value="not">not available</md-option>
+              <md-option value="allDay">all day</md-option>
+              <md-option value="morning">morning time</md-option>
+              <md-option value="evening">evening time</md-option>
+            </md-select>
+          </div>
+        </md-list-item>
+      </md-list>
+
+      <div layout layout-sm="column">
+        <md-button class="md-raised md-primary" ng-click="nextTab(0)">Done</md-button>
+      </div>
+    </md-content>
+  </md-tab>
+</md-tabs>

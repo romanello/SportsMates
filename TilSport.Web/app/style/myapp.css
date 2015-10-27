@@ -1,0 +1,32 @@
+﻿.md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+}
+
+.md-button i {
+    margin-top: 10px;
+    min-width: 25px;
+}
+
+.angular-google-map-container {
+   height: 600px;
+}
+
+.icon-in-button {
+  position: relative;
+  top: 5px;
+  margin-top: 0 !important;
+}
+
+.left-panel a {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.content-center {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: hidden;
+}

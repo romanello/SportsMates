@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3D7F854-5BB9-40A7-9D82-743ADD9CF72C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TilSport.Web</RootNamespace>
+    <AssemblyName>TilSport.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\icons\sport\air3.svg" />
+    <Content Include="app\icons\sport\anvil.svg" />
+    <Content Include="app\icons\sport\bag4.svg" />
+    <Content Include="app\icons\sport\ball.svg" />
+    <Content Include="app\icons\sport\ball1.svg" />
+    <Content Include="app\icons\sport\baseball2.svg" />
+    <Content Include="app\icons\sport\baseball3.svg" />
+    <Content Include="app\icons\sport\baseball4.svg" />
+    <Content Include="app\icons\sport\basket.svg" />
+    <Content Include="app\icons\sport\black43.svg" />
+    <Content Include="app\icons\sport\black44.svg" />
+    <Content Include="app\icons\sport\boot.svg" />
+    <Content Include="app\icons\sport\bowl1.svg" />
+    <Content Include="app\icons\sport\bowling.svg" />
+    <Content Include="app\icons\sport\bowling1.svg" />
+    <Content Include="app\icons\sport\canteen.svg" />
+    <Content Include="app\icons\sport\chronograph.svg" />
+    <Content Include="app\icons\sport\classification.svg" />
+    <Content Include="app\icons\sport\couple.svg" />
+    <Content Include="app\icons\sport\crossed.svg" />
+    <Content Include="app\icons\sport\cyclist.svg" />
+    <Content Include="app\icons\sport\disk.svg" />
+    <Content Include="app\icons\sport\dumbbell1.svg" />
+    <Content Include="app\icons\sport\dumbbells.svg" />
+    <Content Include="app\icons\sport\eight1.svg" />
+    <Content Include="app\icons\sport\exercise1.svg" />
+    <Content Include="app\icons\sport\exercising.svg" />
+    <Content Include="app\icons\sport\feet.svg" />
+    <Content Include="app\icons\sport\first6.svg" />
+    <Content Include="app\icons\sport\football5.svg" />
+    <Content Include="app\icons\sport\footing.svg" />
+    <Content Include="app\icons\sport\fruits.svg" />
+    <Content Include="app\icons\sport\glove.svg" />
+    <Content Include="app\icons\sport\golf1.svg" />
+    <Content Include="app\icons\sport\golf4.svg" />
+    <Content Include="app\icons\sport\golfer.svg" />
+    <Content Include="app\icons\sport\ground.svg" />
+    <Content Include="app\icons\sport\half4.svg" />
+    <Content Include="app\icons\sport\healthy.svg" />
+    <Content Include="app\icons\sport\heart11.svg" />
+    <Content Include="app\icons\sport\helmeted.svg" />
+    <Content Include="app\icons\sport\hockey.svg" />
+    <Content Include="app\icons\sport\jacket1.svg" />
+    <Content Include="app\icons\sport\junk.svg" />
+    <Content Include="app\icons\sport\male2.svg" />
+    <Content Include="app\icons\sport\man10.svg" />
+    <Content Include="app\icons\sport\man13.svg" />
+    <Content Include="app\icons\sport\metro1.svg" />
+    <Content Include="app\icons\sport\news1.svg" />
+    <Content Include="app\icons\sport\plate.svg" />
+    <Content Include="app\icons\sport\poker1.svg" />
+    <Content Include="app\icons\sport\prohibition.svg" />
+    <Content Include="app\icons\sport\racket.svg" />
+    <Content Include="app\icons\sport\riding.svg" />
+    <Content Include="app\icons\sport\rings2.svg" />
+    <Content Include="app\icons\sport\sailboat1.svg" />
+    <Content Include="app\icons\sport\sanction.svg" />
+    <Content Include="app\icons\sport\silhouette1.svg" />
+    <Content Include="app\icons\sport\soccer2.svg" />
+    <Content Include="app\icons\sport\soccer3.svg" />
+    <Content Include="app\icons\sport\soccer5.svg" />
+    <Content Include="app\icons\sport\soda1.svg" />
+    <Content Include="app\icons\sport\sport.svg" />
+    <Content Include="app\icons\sport\sport1.svg" />
+    <Content Include="app\icons\sport\sport2.svg" />
+    <Content Include="app\icons\sport\sport3.svg" />
+    <Content Include="app\icons\sport\sport4.svg" />
+    <Content Include="app\icons\sport\sporting.svg" />
+    <Content Include="app\icons\sport\sportive.svg" />
+    <Content Include="app\icons\sport\sportive1.svg" />
+    <Content Include="app\icons\sport\sportive2.svg" />
+    <Content Include="app\icons\sport\sportive3.svg" />
+    <Content Include="app\icons\sport\sportive4.svg" />
+    <Content Include="app\icons\sport\sportive5.svg" />
+    <Content Include="app\icons\sport\sports.svg" />
+    <Content Include="app\icons\sport\sports10.svg" />
+    <Content Include="app\icons\sport\sports11.svg" />
+    <Content Include="app\icons\sport\sports12.svg" />
+    <Content Include="app\icons\sport\sports3.svg" />
+    <Content Include="app\icons\sport\sports4.svg" />
+    <Content Include="app\icons\sport\sports5.svg" />
+    <Content Include="app\icons\sport\sports6.svg" />
+    <Content Include="app\icons\sport\sports7.svg" />
+    <Content Include="app\icons\sport\sports8.svg" />
+    <Content Include="app\icons\sport\sports9.svg" />
+    <Content Include="app\icons\sport\standing.svg" />
+    <Content Include="app\icons\sport\standing1.svg" />
+    <Content Include="app\icons\sport\standing2.svg" />
+    <Content Include="app\icons\sport\tablets.svg" />
+    <Content Include="app\icons\sport\tennis1.svg" />
+    <Content Include="app\icons\sport\tennis3.svg" />
+    <Content Include="app\icons\sport\three13.svg" />
+    <Content Include="app\icons\sport\trophy1.svg" />
+    <Content Include="app\icons\sport\two29.svg" />
+    <Content Include="app\icons\sport\vegetarian.svg" />
+    <Content Include="app\icons\sport\weighed.svg" />
+    <Content Include="app\icons\sport\weight.svg" />
+    <Content Include="app\icons\sport\whistle.svg" />
+    <Content Include="app\icons\sport\wind1.svg" />
+    <Content Include="app\icons\sport\winner.svg" />
+    <Content Include="app\img\faces\anna.jpg" />
+    <Content Include="app\img\faces\jt.jpg" />
+    <Content Include="app\img\faces\roman.jpg" />
+    <Content Include="app\img\sportsmate_transparent_background.png" />
+    <Content Include="app\img\sports\badminton.png" />
+    <Content Include="app\img\sports\basquetebol.png" />
+    <Content Include="app\img\sports\ciclismo-de-estrada.png" />
+    <Content Include="app\img\sports\futebol.png" />
+    <Content Include="app\img\sports\golfe.png" />
+    <Content Include="app\img\sports\hoquei-sobre-grama.png" />
+    <Content Include="app\img\sports\tenis-de-mesa.png" />
+    <Content Include="app\img\sports\tenis.png" />
+    <Content Include="app\js\controllers\activitiesController.js" />
+    <Content Include="app\js\controllers\applicationController.js" />
+    <Content Include="app\js\controllers\friendsController.js" />
+    <Content Include="app\js\controllers\homeController.js" />
+    <Content Include="app\js\controllers\invitationsController.js" />
+    <Content Include="app\js\controllers\sportDialogController.js" />
+    <Content Include="app\js\controllers\profileController.js" />
+    <Content Include="app\js\services\userDataService.js" />
+    <Content Include="app\lib\angular-route.js" />
+    <Content Include="app\lib\angular.js" />
+    <Content Include="app\lib\jquery-1.6.4.js" />
+    <Content Include="app\lib\jquery.signalR-2.2.0.js" />
+    <Content Include="app\partials\activities.html" />
+    <Content Include="app\partials\friends.html" />
+    <Content Include="app\partials\home.html" />
+    <Content Include="app\partials\invitations.html" />
+    <Content Include="app\partials\sportDialog.html" />
+    <Content Include="app\partials\profile.html" />
+    <Content Include="app\style\myapp.css" />
+    <Content Include="index.html" />
+    <Content Include="app.html" />
+    <Content Include="node_modules\angular-google-maps\dist\angular-google-maps.min.js" />
+    <Content Include="node_modules\angular-google-maps\node_modules\angular-simple-logger\dist\angular-simple-logger.min.js" />
+    <Content Include="packages.config" />
+    <Content Include="app\icons\OlympicSportsIcons_by_VectorOpenStock.zip" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="webApi\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52881</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52881/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

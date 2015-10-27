@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+  <head>
+    <link rel="stylesheet" href="app/style/myapp.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="initial-scale=1"/>
+    <meta charset="utf-8"/>
+    <title>SportsMate</title>
+  </head>
+  <body layout="column" ng-controller="ApplicationController">
+    <md-toolbar layout="row" style="overflow:hidden">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('leftSidenav')" hide-gt-sm class="sdm-header-btn">
+          <i class="material-icons">reorder</i>
+        </md-button>
+        <img src="app/img/sportsmate_transparent_background.png" width="100px" height="76px" />
+        <h1 style="font-size: 24px; white-space: nowrap; margin-left: 10px">play together</h1>
+      </div>
+      <div layout-align="center end" layout-padding>
+        
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-size="large">
+          Connect with Facebook
+        </fb:login-button>
+
+        <!--<img ng-if="userId" src="//graph.facebook.com/{{userId}}/picture"/>-->
+        <!--<div id="status" >
+            </div>-->
+      </div>
+      <!--<div layout-align="center end" layout-padding>
+        <a href="javascript: FB.logout(function(response) {});">Logout</a>
+      </div>-->
+    </md-toolbar>
+    
+    <div layout="row" flex>
+      <!--<img src="app/img/logo.png" width="300px" />-->
+      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 left-panel" md-component-id="leftSidenav" md-is-locked-open="$mdMedia('gt-sm')">
+        <md-button ng-class="{'md-accent': isActive('home')}" ng-href="#/home/">
+          <i class="material-icons icon-in-button">language</i>
+          Map view
+        </md-button>
+        <md-button ng-class="{'md-accent': isActive('profile')}" ng-href="#/profile/">
+          <i class="material-icons icon-in-button">settings</i>
+          My Profile
+        </md-button>
+        <md-button ng-class="{'md-accent': isActive('activities')}" ng-href="#/activities/">
+          <i class="material-icons icon-in-button">event</i>
+          Activities
+        </md-button>
+        <md-button ng-class="{'md-accent': isActive('invitations')}" ng-href="#/invitations/">
+          <i class="material-icons icon-in-button">notifications</i>
+          Invitations
+        </md-button>
+        <md-button ng-class="{'md-accent': isActive('friends')}" ng-href="#/friends/">
+          <i class="material-icons icon-in-button">group</i>
+          Friends
+        </md-button>
+      </md-sidenav>
+      <div layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding">
+          <div ng-view> </div>
+        </md-content>
+      </div>
+    </div>
+    
+
+    <script>
+      // This is called with the results from from FB.getLoginStatus().
+      function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          // The person is logged into Facebook, but not your app.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into this app.';
+        } else {
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into Facebook.';
+        }
+      }
+
+      // This function is called when someone finishes with the Login
+      // Button.  See the onlogin handler attached to it in the sample
+      // code below.
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
+
+      var userId;
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '1561487800759725',
+          status: true,
+          cookie: true,
+          xfbml: true,
+          version: 'v2.4'
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+          //var scope = angular.element($('body')).scope();
+          //scope.userId = response.authResponse.userId;
+          //scope.$apply();
+        });
+
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+      // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
+        });
+      }
+    </script>
+  
+    <script src="app/lib/jquery-1.6.4.js"></script>
+    <script src="node_modules/angular-google-maps/node_modules/lodash/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+    <script src="node_modules/angular-google-maps/node_modules/angular-simple-logger/dist/angular-simple-logger.min.js"></script>    
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="node_modules/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+    
+    <script src="app/app.js"></script>
+    <script src="app/js/controllers/homeController.js"></script>
+    <script src="app/js/controllers/applicationController.js"></script>
+    <script src="app/js/controllers/profileController.js"></script>
+    <script src="app/js/controllers/activitiesController.js"></script>
+    <script src="app/js/controllers/invitationsController.js"></script>
+    <script src="app/js/controllers/friendsController.js"></script>
+  </body>
+</html>

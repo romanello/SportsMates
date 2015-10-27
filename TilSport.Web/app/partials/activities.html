@@ -1,0 +1,35 @@
+﻿<md-content class="md-padding">
+  <h1 class="md-title">Your upcoming activities</h1>
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="item in m.sports">
+      <img ng-src="{{item.imageUrl}}" style="width: 60px; height:60px;" />
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ item.sport }}</h3>
+        <h4>{{ item.details }}</h4>
+      </div>
+      <div layout="column" style="white-space: nowrap"> 
+        <md-button>
+          <i class="material-icons icon-in-button" style="color: green;">check_box</i>
+          Status
+        </md-button>
+      </div>
+      <div layout="column">
+        <md-button>
+          <i class="material-icons icon-in-button">pageview</i>
+          Details
+        </md-button>
+      </div>
+      <div layout="column">
+        <md-button>
+          <i class="material-icons icon-in-button" style="color: red">cancel</i>
+          Cancel
+        </md-button>
+      </div>
+    </md-list-item>
+  </md-list>
+
+  <div layout layout-sm="column">
+    <md-button class="md-raised md-primary" ng-click="nextTab(2)">Create own activity</md-button>
+  </div>
+
+</md-content>
