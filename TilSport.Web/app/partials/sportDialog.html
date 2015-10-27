@@ -10,8 +10,8 @@
       </div>
     </md-toolbar>
     <md-dialog-content style="max-width:800px;max-height:810px; min-width: 300px; min-height: 300px;" class="md-padding">
-      <div layout layout-sm="column" flex>
-        <md-autocomplete required
+      <div layout="row">
+        <md-autocomplete required flex
                          md-selected-item="m.selectedItem"
                          md-search-text="m.searchText"
                          md-items="item in querySearch(m.searchText)"
@@ -27,8 +27,8 @@
           </md-not-found>
         </md-autocomplete>
       </div>
-      <div layout layout-sm="column" flex>
-        <md-input-container>
+      <div layout="row">
+        <md-input-container flex>
           <label>Position (if applicable)</label>
           <input ng-model="user.name">
         </md-input-container>

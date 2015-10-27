@@ -4,52 +4,54 @@
       <h1 class="md-title">General information</h1>
       <p>
         <form name="userForm">
-          <div layout layout-sm="column" flex>
-            <md-input-container>
-              <label>Full Name</label>
-              <input ng-model="user.name">
-            </md-input-container>
-          </div>
-          <div layout layout-sm="column" flex>
-            <md-input-container>
-              <label>Email Address</label>
-              <input ng-model="user.email">
-            </md-input-container>
-          </div>
-          <div layout layout-sm="column">
-            <md-input-container>
-              <label>Day of birth</label>
-              <md-select ng-model="user.birth.day">
-                <md-option ng-repeat="day in m.days" value="{{day}}">
-                  {{day}}
-                </md-option>
-              </md-select>
-            </md-input-container>
-            <md-input-container>
-              <label>Month of birth</label>
-              <md-select ng-model="user.birth.month">
-                <md-option ng-repeat="month in m.months" value="{{month}}">
-                  {{month}}
-                </md-option>
-              </md-select>
-            </md-input-container>
-            <md-input-container>
-              <label>Year of birth</label>
-              <md-select ng-model="user.birth.year">
-                <md-option ng-repeat="year in m.years" value="{{year}}">
-                  {{year}}
-                </md-option>
-              </md-select>
-            </md-input-container>
-          </div>
-          <div layout layout-sm="column">
-            <md-input-container>
-              <label>Location / Home Address</label>
-              <input ng-model="user.location">
-            </md-input-container>
-          </div>
-          <div layout layout-sm="column">
-            <md-switch ng-model="user.geolocate" aria-label="Switch 1">Geolocate me automaticallty</md-switch>
+          <div style="display: inline-block">
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Full Name</label>
+                <input ng-model="user.name">
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Email Address</label>
+                <input ng-model="user.email">
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container>
+                <label>Day of birth</label>
+                <md-select ng-model="user.birth.day">
+                  <md-option ng-repeat="day in m.days" value="{{day}}">
+                    {{day}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+              <md-input-container>
+                <label>Month of birth</label>
+                <md-select ng-model="user.birth.month">
+                  <md-option ng-repeat="month in m.months" value="{{month}}">
+                    {{month}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+              <md-input-container>
+                <label>Year of birth</label>
+                <md-select ng-model="user.birth.year">
+                  <md-option ng-repeat="year in m.years" value="{{year}}">
+                    {{year}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Location / Home Address</label>
+                <input ng-model="user.location">
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-switch ng-model="user.geolocate" aria-label="Switch 1">Geolocate me automaticallty</md-switch>
+            </div>
           </div>
         </form>
       </p>
